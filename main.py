@@ -1,13 +1,10 @@
-from environment import GridWorld
+from agent import Agent
 
-env = GridWorld()
+print("Import successful!")
 
-state = env.reset()
+agent = Agent()
 
-print("Start:", state)
-
-state, reward, done = env.step(3)
-
-print(state)
-print(reward)
-print(done)
+print("Alpha:", agent.alpha)
+print("Gamma:", agent.gamma)
+print("Epsilon:", agent.epsilon)
+print("Q-table Shape:", agent.q_table.shape)
