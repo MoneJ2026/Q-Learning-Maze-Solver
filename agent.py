@@ -1,3 +1,4 @@
+import random
 import numpy as np
 
 
@@ -22,3 +23,12 @@ class Agent:
 
         # Q-Table
         self.q_table = np.zeros((5, 5, 4))
+
+    def choose_action(self, state):
+
+        if random.random() < self.epsilon:
+            return random.randint(0, 3)
+
+        row, col = state
+
+        return np.argmax(self.q_table[row, col])

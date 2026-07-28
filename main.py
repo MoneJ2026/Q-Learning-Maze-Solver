@@ -1,10 +1,9 @@
 from agent import Agent
 
-print("Import successful!")
-
 agent = Agent()
 
-print("Alpha:", agent.alpha)
-print("Gamma:", agent.gamma)
-print("Epsilon:", agent.epsilon)
-print("Q-table Shape:", agent.q_table.shape)
+state = (0, 0)
+
+for i in range(10):
+    action = agent.choose_action(state)
+    print(action)
