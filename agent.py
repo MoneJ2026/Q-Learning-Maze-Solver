@@ -35,7 +35,7 @@ class Agent:
         row, col = state
         return np.argmax(self.q_table[row, col])
 
-    # -----------------------------
+       # -----------------------------
     # Update Q-Table
     # -----------------------------
     def update_q_table(self, state, action, reward, next_state):
@@ -52,3 +52,11 @@ class Agent:
         )
 
         self.q_table[row, col, action] = new_q
+
+    # -----------------------------
+    # Decay Epsilon
+    # -----------------------------
+    def decay_epsilon(self):
+
+        if self.epsilon > self.epsilon_min:
+            self.epsilon *= self.epsilon_decay
